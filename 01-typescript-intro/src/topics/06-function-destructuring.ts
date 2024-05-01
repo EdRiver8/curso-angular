@@ -1,5 +1,5 @@
 // calcular el impusto sobre la venta
-interface Product {
+export interface Product {
   name: string;
   price: number;
   stock: number;
@@ -50,7 +50,9 @@ function calculateTax2(options: TaxCalculationOptions): number[] {
 //   tax,
 //   products,
 // }: TaxCalculationOptions): [number, number] {
-function calculateTax3(options: TaxCalculationOptions): [number, number] {
+export function calculateTax3(
+  options: TaxCalculationOptions
+): [number, number] {
   const { tax, product } = options; // destructuring en los parametros de la funcion
   let total = 0;
   product.forEach(({ price }) => {
@@ -60,27 +62,29 @@ function calculateTax3(options: TaxCalculationOptions): [number, number] {
 }
 
 const tax = 0.16;
-const shoppingCar = [Phone, Tablet, Laptop];
-const taxAmount = calculateTax(Phone, tax);
-console.log("impuesto para el telefono", taxAmount);
+export const shoppingCar = [Phone, Tablet, Laptop];
+// const taxAmount = calculateTax(Phone, tax);
+// console.log("impuesto para el telefono", taxAmount);
 
 // para calcular el impuesto para varios productos, recibe un arreglo de productos y el impuesto
 const resultAmount2: number[] = calculateTax2({ product: shoppingCar, tax }); // si se tiene una propiedad con el mismo nombre que la variable se puede omitir el nombre de la propiedad y solo pasar el valor, en este caso tax: tax se puede pasar solo tax
 
-console.log(
-  "Total para varios productos",
-  resultAmount2[0],
-  "Impuesto total",
-  resultAmount2[1]
-);
+// console.log(
+//   "Total para varios productos",
+//   resultAmount2[0],
+//   "Impuesto total",
+//   resultAmount2[1]
+// );
 
 // ahora aplicando destructuring
-const [total, totalTax] = calculateTax2({ product: shoppingCar, tax });
-console.log("Total para varios productos", total, "Impuesto total", totalTax);
+// const [total, totalTax] = calculateTax2({ product: shoppingCar, tax });
+// console.log("Total para varios productos", total, "Impuesto total", totalTax);
 
 // destructuring en funciones
-const showProduct = ({ name, price }: Product): void => {
-  console.log(`Product: ${name} - Price: ${price}`);
-};
+// const showProduct = ({ name, price }: Product): void => {
+//   console.log(`Product: ${name} - Price: ${price}`);
+// };
 
-showProduct(Phone);
+// showProduct(Phone);
+
+export {};
