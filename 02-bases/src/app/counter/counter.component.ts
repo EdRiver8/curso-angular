@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  selector: 'app-counter',
+  template: `<h1>Counter</h1>`,
+  styles: ['h1 { color: red; }'],
 })
-export class AppComponent {
-  public title: string = 'Primera App de Angular';
+export class CounterComponent {
   public counter: number = 0;
 
   public increment(): void {
