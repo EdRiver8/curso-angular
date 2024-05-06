@@ -1,1 +1,23 @@
-<p>hero works!</p>
+<h1>Spider-Man!</h1>
+
+<dl>
+  <td>Hero:</td>
+  <dd>{{ heroName }}</dd>
+  <td>Name:</td>
+  <dd>{{ realName }}</dd>
+  <td>edad:</td>
+  <dd>{{ age }}</dd>
+  <td>Metodo de la Clase:</td>
+  <!-- como es un metodo, se llama con () -->
+  <dd>{{ getHeroDescription() }}</dd>
+  <!-- se llama como si fuera una propiedad por que en hero.component.ts se antepuso con un get -->
+  <td>Usando el Getter de la Clase para Mayusculas</td>
+  <dd>{{ capitalizedName }}</dd>
+</dl>
+
+<button class="btn btn-primary mx-2" (click)="changeHero()">
+  Asignar Iron-Man
+</button>
+<button class="btn btn-primary mx-2" (click)="changeAge()">
+  Actualizar Edad
+</button>
