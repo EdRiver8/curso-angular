@@ -44,4 +44,10 @@ export class HeroComponent {
   public changeSuperPowers(): void {
     this.superPowers = ['Super Strength', 'Flight', 'Energy Blasts'];
   }
+
+  public resetForm(): void {
+    this.heroName = 'Spider-Man';
+    this.realName = 'Peter Parker';
+    this.age = 24;
+  }
 }
