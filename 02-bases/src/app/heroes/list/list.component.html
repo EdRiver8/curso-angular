@@ -1,9 +1,25 @@
 <p>Listado de Heroes!</p>
 
-<button class="btn btn-danger">Borrar Ultimo heroe</button>
+<!-- si deletedHero es falso entonces no muestre nada, aunque es un undefined, este valor se toma como falsie -->
+<div *ngIf="deletedHero; else nothingWasDeleted">
+  <h3>
+    Heroe Borrado <small class="text-danger">{{ deletedHero }}</small>
+  </h3>
+</div>
 
-<h3>Heroe Borrado <small class="text-danger">XXX</small></h3>
-<h3>No se ha borrado un heroe</h3>
+<!-- solo muestra la lista si el tamaño es mayor que cero -->
+<button
+  *ngIf="heroes.length > 0"
+  class="btn btn-danger"
+  (click)="removeLastHero()"
+>
+  Borrar Ultimo heroe
+</button>
+
+<!-- el ng-template esta esperando en que momento mostrarse, en este caso se vincula la referencia local con '#' -->
+<ng-template #nothingWasDeleted>
+  <h3>No se ha borrado un heroe</h3>
+</ng-template>
 
 <ul class="mt-2 list-group">
   <li *ngFor="let name of heroes" class="list-group-item">{{ name }}</li>
