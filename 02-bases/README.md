@@ -1,3 +1,12 @@
+# Consideraciones
+
+- Al crear el proyecto, sino es angular 15 o menor, usar: ng new <nombre de la aplicación> --standalone false
+- Cuando se descarga el proyecto de un repo, como no se suben los node_modules y otros paquetes, se debe ejecutar:
+  npm install
+  estando en la ruta raiz de la descarga
+- Para crear componentes, se puede ejecutar: ng g c [path/name]
+- Para crear un modulo, se ejecuta: ng g m [path/name]
+
 # Bases
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
