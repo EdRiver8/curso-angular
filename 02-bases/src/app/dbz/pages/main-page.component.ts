@@ -12,4 +12,8 @@ export class MainPageComponent {
     { name: 'Trunks', power: 6000 },
     { name: 'Gohan', power: 14000 },
   ];
+
+  public onNewCharacter(character: Character): void {
+    this.characteres.push(character);
+  }
 }

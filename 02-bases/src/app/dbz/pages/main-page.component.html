@@ -6,6 +6,9 @@
     <dbz-list [charactersList]="characteres"></dbz-list>
   </div>
   <div class="col">
-    <dbz-add-character></dbz-add-character>
+    <!-- $event sirve para pasar el objeto que se emite en el evento desde el componente hijo en este caso del componente dbz-add-character -->
+    <dbz-add-character
+      (newCharacter)="onNewCharacter($event)"
+    ></dbz-add-character>
   </div>
 </div>

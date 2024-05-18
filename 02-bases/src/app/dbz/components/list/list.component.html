@@ -1,9 +1,31 @@
 <!-- <p>List Dbz Works!</p> -->
 <h4>Listado</h4>
 <ul class="list-group">
-  <li class="list-group-item" *ngFor="let character of charactersList">
+  <!-- class="list-group-item {{ i === 0 ? 'list-group-item-success' : '' }}" -->
+  <li
+    *ngFor="
+      let character of charactersList;
+      let i = index;
+      let isFirst = first;
+      last as isLast;
+      let isEven = even;
+      let isOdd = odd
+    "
+    class="list-group-item"
+    [ngClass]="{
+      'list-group-item-dark': isLast,
+      'list-group-item-primary': isEven
+    }"
+  >
+    <!-- first es una variable que se puede usar en el ngFor -->
+    <!-- index es una variable que se puede usar en el ngFor -->
+    <span class="text-primary">{{ i + 1 }}. </span>
     <span>{{ character.name }} - </span>
     <strong>power: </strong>
     <span>{{ character.power }}</span>
+    <!-- <span> Es el primero: {{ isFirst }} </span>
+    <span> Es el ultimo: {{ isLast }}</span> -->
+    <!-- <span> Es par?: {{ isEven }}</span>
+    <span> Es impar?: {{ isOdd }}</span> -->
   </li>
 </ul>
