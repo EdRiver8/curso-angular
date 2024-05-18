@@ -1,5 +1,6 @@
 # Consideraciones
 
+- Para ejecutar los comandos de angular 'ng' se debe usar una terminal cmd (no powershell), ya que laa instalacion no se hizo para esta
 - Al crear el proyecto, sino es angular 15 o menor, usar: ng new <nombre de la aplicación> --standalone false
 - Cuando se descarga el proyecto de un repo, como no se suben los node_modules y otros paquetes, se debe ejecutar:
   npm install
